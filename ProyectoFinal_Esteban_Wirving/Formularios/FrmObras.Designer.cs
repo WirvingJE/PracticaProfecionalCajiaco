@@ -29,12 +29,17 @@
         private void InitializeComponent()
         {
             this.DgLista = new System.Windows.Forms.DataGridView();
+            this.CID_Obra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CFecha_Inicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CFecha_Final = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BtnCancelar = new System.Windows.Forms.Button();
             this.BtnLimpiar = new System.Windows.Forms.Button();
             this.BtnEliminar = new System.Windows.Forms.Button();
             this.BtnModificar = new System.Windows.Forms.Button();
             this.BtnAgregar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.CbNombreCliente = new System.Windows.Forms.ComboBox();
             this.TxtEstado = new System.Windows.Forms.TextBox();
             this.TxtFecha_Final = new System.Windows.Forms.TextBox();
             this.TxtFecha_Inicio = new System.Windows.Forms.TextBox();
@@ -48,11 +53,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.CboxVerActivos = new System.Windows.Forms.CheckBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.CbNombreCliente = new System.Windows.Forms.ComboBox();
-            this.CID_Obra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CFecha_Inicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CFecha_Final = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DgLista)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -77,11 +77,50 @@
             this.DgLista.RowHeadersWidth = 51;
             this.DgLista.RowTemplate.Height = 24;
             this.DgLista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgLista.Size = new System.Drawing.Size(1023, 281);
+            this.DgLista.Size = new System.Drawing.Size(1089, 281);
             this.DgLista.TabIndex = 33;
             this.DgLista.VirtualMode = true;
             this.DgLista.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgLista_CellContentClick);
             this.DgLista.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.DgLista_DataBindingComplete);
+            // 
+            // CID_Obra
+            // 
+            this.CID_Obra.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.CID_Obra.DataPropertyName = "ID_Obra";
+            this.CID_Obra.HeaderText = "ID Obra";
+            this.CID_Obra.MinimumWidth = 6;
+            this.CID_Obra.Name = "CID_Obra";
+            this.CID_Obra.ReadOnly = true;
+            this.CID_Obra.Width = 125;
+            // 
+            // CFecha_Inicio
+            // 
+            this.CFecha_Inicio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.CFecha_Inicio.DataPropertyName = "Fecha_Inicio";
+            this.CFecha_Inicio.HeaderText = "Fecha Inicio";
+            this.CFecha_Inicio.MinimumWidth = 6;
+            this.CFecha_Inicio.Name = "CFecha_Inicio";
+            this.CFecha_Inicio.ReadOnly = true;
+            this.CFecha_Inicio.Width = 150;
+            // 
+            // CFecha_Final
+            // 
+            this.CFecha_Final.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.CFecha_Final.DataPropertyName = "Fecha_Final";
+            this.CFecha_Final.HeaderText = "Fecha Entrega";
+            this.CFecha_Final.MinimumWidth = 6;
+            this.CFecha_Final.Name = "CFecha_Final";
+            this.CFecha_Final.ReadOnly = true;
+            this.CFecha_Final.Width = 150;
+            // 
+            // CEstado
+            // 
+            this.CEstado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.CEstado.DataPropertyName = "Estado";
+            this.CEstado.HeaderText = "Estado";
+            this.CEstado.MinimumWidth = 6;
+            this.CEstado.Name = "CEstado";
+            this.CEstado.ReadOnly = true;
             // 
             // BtnCancelar
             // 
@@ -172,6 +211,15 @@
             this.groupBox1.TabIndex = 26;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Detalle de la Obra";
+            // 
+            // CbNombreCliente
+            // 
+            this.CbNombreCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CbNombreCliente.FormattingEnabled = true;
+            this.CbNombreCliente.Location = new System.Drawing.Point(662, 136);
+            this.CbNombreCliente.Name = "CbNombreCliente";
+            this.CbNombreCliente.Size = new System.Drawing.Size(323, 33);
+            this.CbNombreCliente.TabIndex = 9;
             // 
             // TxtEstado
             // 
@@ -296,60 +344,12 @@
             this.pictureBox1.TabIndex = 32;
             this.pictureBox1.TabStop = false;
             // 
-            // CbNombreCliente
-            // 
-            this.CbNombreCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CbNombreCliente.FormattingEnabled = true;
-            this.CbNombreCliente.Location = new System.Drawing.Point(662, 136);
-            this.CbNombreCliente.Name = "CbNombreCliente";
-            this.CbNombreCliente.Size = new System.Drawing.Size(323, 33);
-            this.CbNombreCliente.TabIndex = 9;
-            // 
-            // CID_Obra
-            // 
-            this.CID_Obra.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.CID_Obra.DataPropertyName = "ID_Obra";
-            this.CID_Obra.HeaderText = "ID Obra";
-            this.CID_Obra.MinimumWidth = 6;
-            this.CID_Obra.Name = "CID_Obra";
-            this.CID_Obra.ReadOnly = true;
-            this.CID_Obra.Width = 125;
-            // 
-            // CFecha_Inicio
-            // 
-            this.CFecha_Inicio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.CFecha_Inicio.DataPropertyName = "Fecha_Inicio";
-            this.CFecha_Inicio.HeaderText = "Fecha Inicio";
-            this.CFecha_Inicio.MinimumWidth = 6;
-            this.CFecha_Inicio.Name = "CFecha_Inicio";
-            this.CFecha_Inicio.ReadOnly = true;
-            this.CFecha_Inicio.Width = 150;
-            // 
-            // CFecha_Final
-            // 
-            this.CFecha_Final.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.CFecha_Final.DataPropertyName = "Fecha_Final";
-            this.CFecha_Final.HeaderText = "Fecha Entrega";
-            this.CFecha_Final.MinimumWidth = 6;
-            this.CFecha_Final.Name = "CFecha_Final";
-            this.CFecha_Final.ReadOnly = true;
-            this.CFecha_Final.Width = 150;
-            // 
-            // CEstado
-            // 
-            this.CEstado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.CEstado.DataPropertyName = "Estado";
-            this.CEstado.HeaderText = "Estado";
-            this.CEstado.MinimumWidth = 6;
-            this.CEstado.Name = "CEstado";
-            this.CEstado.ReadOnly = true;
-            // 
             // FrmObras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(1111, 780);
+            this.ClientSize = new System.Drawing.Size(1140, 780);
             this.Controls.Add(this.DgLista);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.BtnCancelar);
