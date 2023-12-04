@@ -105,6 +105,20 @@ namespace ProyectoFinal_Esteban_Wirving.Formularios
         {
 
         }
+
+        private void MnuSalir_Click(object sender, EventArgs e)
+        {
+            {
+                // Preguntar al usuario si realmente desea salir
+                DialogResult result = MessageBox.Show("¿Estás seguro de que quieres salir?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                // Si el usuario elige "Sí", cerrar la aplicación
+                if (result == DialogResult.Yes)
+                {
+                    Application.Exit();
+                }
+            }
+        }
     }
     }
 

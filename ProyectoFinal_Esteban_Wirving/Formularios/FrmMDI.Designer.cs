@@ -178,6 +178,7 @@
             this.MnuSalir.Name = "MnuSalir";
             this.MnuSalir.Size = new System.Drawing.Size(76, 32);
             this.MnuSalir.Text = "SALIR";
+            this.MnuSalir.Click += new System.EventHandler(this.MnuSalir_Click);
             // 
             // MnuAcercaDe
             // 
