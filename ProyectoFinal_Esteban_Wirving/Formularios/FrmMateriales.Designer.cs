@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             this.DgLista = new System.Windows.Forms.DataGridView();
+            this.CCodigo_Material = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CTipo_Material = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CID_Provedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.BtnCancelar = new System.Windows.Forms.Button();
             this.BtnLimpiar = new System.Windows.Forms.Button();
@@ -49,11 +54,6 @@
             this.TxtBuscar = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.CboxVerActivos = new System.Windows.Forms.CheckBox();
-            this.CCodigo_Material = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CTipo_Material = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CID_Provedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DgLista)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -82,8 +82,57 @@
             this.DgLista.Size = new System.Drawing.Size(1023, 281);
             this.DgLista.TabIndex = 22;
             this.DgLista.VirtualMode = true;
+            this.DgLista.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgLista_CellClick);
             this.DgLista.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgLista_CellContentClick_1);
             this.DgLista.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.DgLista_DataBindingComplete_1);
+            // 
+            // CCodigo_Material
+            // 
+            this.CCodigo_Material.DataPropertyName = "Codigo_Material";
+            this.CCodigo_Material.HeaderText = "Codigo Material";
+            this.CCodigo_Material.MinimumWidth = 6;
+            this.CCodigo_Material.Name = "CCodigo_Material";
+            this.CCodigo_Material.ReadOnly = true;
+            this.CCodigo_Material.Width = 125;
+            // 
+            // CCantidad
+            // 
+            this.CCantidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.CCantidad.DataPropertyName = "Cantidad";
+            this.CCantidad.HeaderText = "Cantidad";
+            this.CCantidad.MinimumWidth = 6;
+            this.CCantidad.Name = "CCantidad";
+            this.CCantidad.ReadOnly = true;
+            // 
+            // CPrecio
+            // 
+            this.CPrecio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.CPrecio.DataPropertyName = "Precio";
+            this.CPrecio.HeaderText = "Precio";
+            this.CPrecio.MinimumWidth = 6;
+            this.CPrecio.Name = "CPrecio";
+            this.CPrecio.ReadOnly = true;
+            this.CPrecio.Width = 125;
+            // 
+            // CTipo_Material
+            // 
+            this.CTipo_Material.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.CTipo_Material.DataPropertyName = "Tipo_Material";
+            this.CTipo_Material.HeaderText = "Tipo Material";
+            this.CTipo_Material.MinimumWidth = 6;
+            this.CTipo_Material.Name = "CTipo_Material";
+            this.CTipo_Material.ReadOnly = true;
+            this.CTipo_Material.Width = 200;
+            // 
+            // CID_Provedor
+            // 
+            this.CID_Provedor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.CID_Provedor.DataPropertyName = "ID_Provedor";
+            this.CID_Provedor.HeaderText = "Proveedor";
+            this.CID_Provedor.MinimumWidth = 6;
+            this.CID_Provedor.Name = "CID_Provedor";
+            this.CID_Provedor.ReadOnly = true;
+            this.CID_Provedor.Width = 125;
             // 
             // pictureBox1
             // 
@@ -307,54 +356,6 @@
             this.CboxVerActivos.Text = "Ver Materiales Activos";
             this.CboxVerActivos.UseVisualStyleBackColor = true;
             this.CboxVerActivos.CheckedChanged += new System.EventHandler(this.CboxVerActivos_CheckedChanged_1);
-            // 
-            // CCodigo_Material
-            // 
-            this.CCodigo_Material.DataPropertyName = "Codigo_Material";
-            this.CCodigo_Material.HeaderText = "Codigo Material";
-            this.CCodigo_Material.MinimumWidth = 6;
-            this.CCodigo_Material.Name = "CCodigo_Material";
-            this.CCodigo_Material.ReadOnly = true;
-            this.CCodigo_Material.Width = 125;
-            // 
-            // CCantidad
-            // 
-            this.CCantidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.CCantidad.DataPropertyName = "Cantidad";
-            this.CCantidad.HeaderText = "Cantidad";
-            this.CCantidad.MinimumWidth = 6;
-            this.CCantidad.Name = "CCantidad";
-            this.CCantidad.ReadOnly = true;
-            // 
-            // CPrecio
-            // 
-            this.CPrecio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.CPrecio.DataPropertyName = "Precio";
-            this.CPrecio.HeaderText = "Precio";
-            this.CPrecio.MinimumWidth = 6;
-            this.CPrecio.Name = "CPrecio";
-            this.CPrecio.ReadOnly = true;
-            this.CPrecio.Width = 125;
-            // 
-            // CTipo_Material
-            // 
-            this.CTipo_Material.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.CTipo_Material.DataPropertyName = "Tipo_Material";
-            this.CTipo_Material.HeaderText = "Tipo Material";
-            this.CTipo_Material.MinimumWidth = 6;
-            this.CTipo_Material.Name = "CTipo_Material";
-            this.CTipo_Material.ReadOnly = true;
-            this.CTipo_Material.Width = 200;
-            // 
-            // CID_Provedor
-            // 
-            this.CID_Provedor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.CID_Provedor.DataPropertyName = "ID_Provedor";
-            this.CID_Provedor.HeaderText = "Proveedor";
-            this.CID_Provedor.MinimumWidth = 6;
-            this.CID_Provedor.Name = "CID_Provedor";
-            this.CID_Provedor.ReadOnly = true;
-            this.CID_Provedor.Width = 125;
             // 
             // FrmMateriales
             // 

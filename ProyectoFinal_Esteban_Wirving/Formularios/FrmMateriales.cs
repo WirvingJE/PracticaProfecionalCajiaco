@@ -480,6 +480,57 @@ namespace ProyectoFinal_Esteban_Wirving.Formularios
 
             }
         }
+
+        private void DgLista_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //cuando seleccionemos una fila del datagrid se debe cargar la info de dicho usuario
+            //en el usuario local y luego dibujar esa info en los controles graficos 
+
+            if (DgLista.SelectedRows.Count == 1)
+            {
+                LimpiarFormulario();
+
+                //de la colección de filas seleccionadas (que en este caso es solo una) 
+                //seleccionamos la fila en indice 0, o sea la primera 
+                DataGridViewRow MiFila = DgLista.SelectedRows[0];
+
+                //lo que necesito es el valor del ID del usuario para realizaer la consulta 
+                //y traer todos los datos para llenar el objeto de usuario local 
+                int CodigoMaterial = Convert.ToInt32(MiFila.Cells["CCodigo_Material"].Value);
+
+                //para no asumir riesgos se reinstancia el usuario local 
+                MiMaterialLocal = new Logica.Models.Material();
+
+                //ahora le agregarmos el valor obtenido por la fila al ID del usuario local
+                MiMaterialLocal.CodigoMaterial = CodigoMaterial;
+
+                //una vez que tengo el objeto local con el valor del id, puedo ir a consultar
+                //el usuario por ese id y llenar el resto de atributos. 
+                MiMaterialLocal = MiMaterialLocal.ConsultarPorCodigoRetornaMaterial();
+
+                //validamos que el usuario local tenga datos 
+
+                if (MiMaterialLocal != null && MiMaterialLocal.CodigoMaterial > 0)
+                {
+                    //si cargamos correctamente el material local llenamos los controles 
+
+                    Txt_CodigoMaterial.Text = Convert.ToString(MiMaterialLocal.CodigoMaterial);
+
+                    TxtCantidad.Text = Convert.ToString(MiMaterialLocal.Cantidad);
+                    TxtPrecio.Text = Convert.ToString(MiMaterialLocal.Precio);
+                    TxtTipoMaterial.Text = MiMaterialLocal.TipoMaterial;
+                    TxtIDProveedor.Text = Convert.ToString(MiMaterialLocal.IDProveedor);
+
+
+                    ActivarEditarEliminar();
+
+                }
+
+
+
+            }
+
+        }
     }
     }
 

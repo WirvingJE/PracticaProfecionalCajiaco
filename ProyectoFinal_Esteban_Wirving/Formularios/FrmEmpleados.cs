@@ -570,5 +570,66 @@ namespace ProyectoFinal_Esteban_Wirving.Formularios
             TxtDireccion.Clear();
 
         }
+
+        private void DgLista_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //cuando seleccionemos una fila del datagrid se debe cargar la info de dicho usuario
+            //en el usuario local y luego dibujar esa info en los controles graficos 
+
+            if (DgLista.SelectedRows.Count == 1)
+            {
+                LimpiarFormulario();
+
+                //de la colección de filas seleccionadas (que en este caso es solo una) 
+                //seleccionamos la fila en indice 0, o sea la primera 
+                DataGridViewRow MiFila = DgLista.SelectedRows[0];
+
+                //lo que necesito es el valor del ID del usuario para realizaer la consulta 
+                //y traer todos los datos para llenar el objeto de usuario local 
+                int IdEmpleado = Convert.ToInt32(MiFila.Cells["CID_Empleado"].Value);
+
+                //para no asumir riesgos se reinstancia el usuario local 
+                MiEmpleadoLocal = new Logica.Models.Empleados();
+
+                //ahora le agregarmos el valor obtenido por la fila al ID del usuario local
+                MiEmpleadoLocal.IDEmpleado = IdEmpleado;
+
+                //una vez que tengo el objeto local con el valor del id, puedo ir a consultar
+                //el usuario por ese id y llenar el resto de atributos. 
+                MiEmpleadoLocal = MiEmpleadoLocal.ConsultarPorIDRetornaEmpleado();
+
+                //validamos que el usuario local tenga datos 
+
+                if (MiEmpleadoLocal != null && MiEmpleadoLocal.IDEmpleado > 0)
+                {
+                    //si cargamos correctamente el usuario local llenamos los controles 
+
+
+                    Txt_IDEmpleado.Text = Convert.ToString(MiEmpleadoLocal.IDEmpleado);
+
+                    TxtNombre_Completo.Text = MiEmpleadoLocal.NombreCompleto;
+
+                    TxtCedula.Text = MiEmpleadoLocal.Cedula;
+
+                    TxtTelefono.Text = MiEmpleadoLocal.Telefono;
+
+                    TxtCorreo.Text = MiEmpleadoLocal.Correo;
+
+                    TxtDireccion.Text = MiEmpleadoLocal.Direccion;
+
+                    TxtIDObra.Text = Convert.ToString(MiEmpleadoLocal.IDObra);
+
+                    //combobox 
+                    CbPuesto.SelectedValue = MiEmpleadoLocal.MiPuestoTipo.IDPuestoEmpleado;
+
+                    ActivarEditarEliminar();
+
+                }
+
+
+
+            }
+
+        }
     }
 }

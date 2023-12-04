@@ -490,6 +490,57 @@ namespace ProyectoFinal_Esteban_Wirving.Formularios
         {
             CargarListaDeObras();
         }
+
+        private void DgLista_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //cuando seleccionemos una fila del datagrid se debe cargar la info de dicho usuario
+            //en el usuario local y luego dibujar esa info en los controles graficos 
+
+            if (DgLista.SelectedRows.Count == 1)
+            {
+                LimpiarFormulario();
+
+                //de la colección de filas seleccionadas (que en este caso es solo una) 
+                //seleccionamos la fila en indice 0, o sea la primera 
+                DataGridViewRow MiFila = DgLista.SelectedRows[0];
+
+                //lo que necesito es el valor del ID del usuario para realizaer la consulta 
+                //y traer todos los datos para llenar el objeto de usuario local 
+                int IDObra = Convert.ToInt32(MiFila.Cells["CID_Obra"].Value);
+
+                //para no asumir riesgos se reinstancia el usuario local 
+                MiObraLocal = new Logica.Models.Obra();
+
+                //ahora le agregarmos el valor obtenido por la fila al ID del usuario local
+                MiObraLocal.IDObra = IDObra;
+
+                //una vez que tengo el objeto local con el valor del id, puedo ir a consultar
+                //el usuario por ese id y llenar el resto de atributos. 
+                MiObraLocal = MiObraLocal.ConsultarPorIDRetornaObra();
+
+                //validamos que el usuario local tenga datos 
+
+                if (MiObraLocal != null && MiObraLocal.IDObra > 0)
+                {
+                    //si cargamos correctamente el material local llenamos los controles 
+
+                    TxtID_Obra.Text = Convert.ToString(MiObraLocal.IDObra);
+
+                    TxtFecha_Inicio.Text = Convert.ToString(MiObraLocal.FechaInicio);
+                    TxtFecha_Final.Text = Convert.ToString(MiObraLocal.FechaFinal);
+                    TxtEstado.Text = MiObraLocal.Estado;
+                    //combobox 
+                    CbNombreCliente.SelectedValue = MiObraLocal.MiClienteTipo.IDCliente;
+
+                    ActivarEditarEliminar();
+
+                }
+
+
+
+            }
+
+        }
     }
 }
 

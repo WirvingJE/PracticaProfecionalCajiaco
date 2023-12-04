@@ -325,6 +325,7 @@
             this.DgLista.Size = new System.Drawing.Size(1023, 281);
             this.DgLista.TabIndex = 11;
             this.DgLista.VirtualMode = true;
+            this.DgLista.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgLista_CellClick);
             this.DgLista.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgLista_CellContentClick);
             // 
             // CID_Provedor

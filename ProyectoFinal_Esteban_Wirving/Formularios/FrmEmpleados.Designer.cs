@@ -29,6 +29,12 @@
         private void InitializeComponent()
         {
             this.DgLista = new System.Windows.Forms.DataGridView();
+            this.CID_Empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CNombre_Completo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CCedula = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CCorreo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CTelefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CID_Obra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.BtnCancelar = new System.Windows.Forms.Button();
             this.BtnLimpiar = new System.Windows.Forms.Button();
@@ -55,12 +61,6 @@
             this.TxtBuscar = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.CboxVerActivos = new System.Windows.Forms.CheckBox();
-            this.CID_Empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CNombre_Completo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CCedula = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CCorreo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CTelefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CID_Obra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DgLista)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -90,8 +90,66 @@
             this.DgLista.Size = new System.Drawing.Size(1134, 246);
             this.DgLista.TabIndex = 22;
             this.DgLista.VirtualMode = true;
+            this.DgLista.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgLista_CellClick);
             this.DgLista.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgLista_CellContentClick_1);
             this.DgLista.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.DgLista_DataBindingComplete_1);
+            // 
+            // CID_Empleado
+            // 
+            this.CID_Empleado.DataPropertyName = "IDEmpleado";
+            this.CID_Empleado.HeaderText = "ID Empleado";
+            this.CID_Empleado.MinimumWidth = 6;
+            this.CID_Empleado.Name = "CID_Empleado";
+            this.CID_Empleado.ReadOnly = true;
+            this.CID_Empleado.Width = 125;
+            // 
+            // CNombre_Completo
+            // 
+            this.CNombre_Completo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.CNombre_Completo.DataPropertyName = "NombreCompleto";
+            this.CNombre_Completo.HeaderText = "Nombre Completo";
+            this.CNombre_Completo.MinimumWidth = 6;
+            this.CNombre_Completo.Name = "CNombre_Completo";
+            this.CNombre_Completo.ReadOnly = true;
+            // 
+            // CCedula
+            // 
+            this.CCedula.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.CCedula.DataPropertyName = "Cedula";
+            this.CCedula.HeaderText = "Cedula";
+            this.CCedula.MinimumWidth = 6;
+            this.CCedula.Name = "CCedula";
+            this.CCedula.ReadOnly = true;
+            this.CCedula.Width = 125;
+            // 
+            // CCorreo
+            // 
+            this.CCorreo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.CCorreo.DataPropertyName = "Correo";
+            this.CCorreo.HeaderText = "Correo";
+            this.CCorreo.MinimumWidth = 6;
+            this.CCorreo.Name = "CCorreo";
+            this.CCorreo.ReadOnly = true;
+            this.CCorreo.Width = 150;
+            // 
+            // CTelefono
+            // 
+            this.CTelefono.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.CTelefono.DataPropertyName = "Telefono";
+            this.CTelefono.HeaderText = "Telefono";
+            this.CTelefono.MinimumWidth = 6;
+            this.CTelefono.Name = "CTelefono";
+            this.CTelefono.ReadOnly = true;
+            this.CTelefono.Width = 125;
+            // 
+            // CID_Obra
+            // 
+            this.CID_Obra.DataPropertyName = "IDObra";
+            this.CID_Obra.HeaderText = "ID Obra";
+            this.CID_Obra.MinimumWidth = 6;
+            this.CID_Obra.Name = "CID_Obra";
+            this.CID_Obra.ReadOnly = true;
+            this.CID_Obra.Width = 125;
             // 
             // pictureBox1
             // 
@@ -373,60 +431,6 @@
             this.CboxVerActivos.Text = "Ver Empleados Activos";
             this.CboxVerActivos.UseVisualStyleBackColor = true;
             this.CboxVerActivos.CheckedChanged += new System.EventHandler(this.CboxVerActivos_CheckedChanged_1);
-            // 
-            // CID_Empleado
-            // 
-            this.CID_Empleado.DataPropertyName = "IDEmpleado";
-            this.CID_Empleado.HeaderText = "ID Empleado";
-            this.CID_Empleado.MinimumWidth = 6;
-            this.CID_Empleado.Name = "CID_Empleado";
-            this.CID_Empleado.ReadOnly = true;
-            // 
-            // CNombre_Completo
-            // 
-            this.CNombre_Completo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.CNombre_Completo.DataPropertyName = "NombreCompleto";
-            this.CNombre_Completo.HeaderText = "Nombre Completo";
-            this.CNombre_Completo.MinimumWidth = 6;
-            this.CNombre_Completo.Name = "CNombre_Completo";
-            this.CNombre_Completo.ReadOnly = true;
-            // 
-            // CCedula
-            // 
-            this.CCedula.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.CCedula.DataPropertyName = "Cedula";
-            this.CCedula.HeaderText = "Cedula";
-            this.CCedula.MinimumWidth = 6;
-            this.CCedula.Name = "CCedula";
-            this.CCedula.ReadOnly = true;
-            this.CCedula.Width = 125;
-            // 
-            // CCorreo
-            // 
-            this.CCorreo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.CCorreo.DataPropertyName = "Correo";
-            this.CCorreo.HeaderText = "Correo";
-            this.CCorreo.MinimumWidth = 6;
-            this.CCorreo.Name = "CCorreo";
-            this.CCorreo.ReadOnly = true;
-            this.CCorreo.Width = 150;
-            // 
-            // CTelefono
-            // 
-            this.CTelefono.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.CTelefono.DataPropertyName = "Telefono";
-            this.CTelefono.HeaderText = "Telefono";
-            this.CTelefono.MinimumWidth = 6;
-            this.CTelefono.Name = "CTelefono";
-            this.CTelefono.ReadOnly = true;
-            // 
-            // CID_Obra
-            // 
-            this.CID_Obra.DataPropertyName = "IDObra";
-            this.CID_Obra.HeaderText = "ID Obra";
-            this.CID_Obra.MinimumWidth = 6;
-            this.CID_Obra.Name = "CID_Obra";
-            this.CID_Obra.ReadOnly = true;
             // 
             // FrmEmpleados
             // 

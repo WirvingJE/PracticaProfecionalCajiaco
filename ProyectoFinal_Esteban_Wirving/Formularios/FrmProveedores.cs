@@ -468,5 +468,57 @@ namespace ProyectoFinal_Esteban_Wirving.Formularios
         {
             CargarListaDeProveedores();
         }
+
+        private void DgLista_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (DgLista.SelectedRows.Count == 1)
+            {
+                LimpiarFormulario();
+
+                //de la colección de filas seleccionadas (que en este caso es solo una) 
+                //seleccionamos la fila en indice 0, o sea la primera 
+                DataGridViewRow MiFila = DgLista.SelectedRows[0];
+
+                //lo que necesito es el valor del ID del usuario para realizaer la consulta 
+                //y traer todos los datos para llenar el objeto de usuario local 
+                int ID_Proveedor = Convert.ToInt32(MiFila.Cells["CID_Provedor"].Value);
+
+                //para no asumir riesgos se reinstancia el usuario local 
+                MiProveedorLocal = new Logica.Models.Proveedor();
+
+                //ahora le agregarmos el valor obtenido por la fila al ID del usuario local
+                MiProveedorLocal.IDProveedor = ID_Proveedor;
+
+                //una vez que tengo el objeto local con el valor del id, puedo ir a consultar
+                //el usuario por ese id y llenar el resto de atributos. 
+                MiProveedorLocal = MiProveedorLocal.ConsultarPorIDRetornarProveedor();
+
+                //validamos que el usuario local tenga datos 
+
+                if (MiProveedorLocal != null && MiProveedorLocal.IDProveedor > 0)
+                {
+                    //si cargamos correctamente el usuario local llenamos los controles 
+
+                    Txt_IDProveedor.Text = Convert.ToString(MiProveedorLocal.IDProveedor);
+
+                    TxtNombre_Completo.Text = MiProveedorLocal.Nombre_Completo;
+
+                    TxtCedula.Text = MiProveedorLocal.Cedula;
+
+                    TxtTelefono.Text = MiProveedorLocal.Telefono;
+
+                    TxtCorreo.Text = MiProveedorLocal.Correo;
+
+                    TxtDireccion.Text = MiProveedorLocal.Direccion;
+
+                    ActivarEditarEliminar();
+
+                }
+
+
+
+            }
+
+        }
     }
 }
