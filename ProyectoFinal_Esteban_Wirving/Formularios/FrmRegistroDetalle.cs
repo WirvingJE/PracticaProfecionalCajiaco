@@ -115,7 +115,25 @@ namespace ProyectoFinal_Esteban_Wirving.Formularios
                 TxtTotal.Text = string.Format("{0:C2}",totalMonto);
                 }
             }
+
+        private void BtnCrearRegistro_Click(object sender, EventArgs e)
+        {
+            // Obtener el texto de TxtEstado
+            string estado = TxtEstado.Text;
+
+            // Obtener la cantidad total de TxtTotalCantidad
+            string totalCantidad = TxtTotalCantidad.Text;
+
+            // Obtener el monto de TxtTotal
+            string totalMonto = TxtTotal.Text;
+
+            // Obtener el texto de TxtNotas
+            string notas = TxtNotas.Text;
+
+            // Mostrar un mensaje con el estado, la cantidad total, el monto y las notas
+            MessageBox.Show($"Estado: {estado}\nTotal Cantidad: {totalCantidad}\nTotal Monto: {totalMonto}\nNotas: {notas}", "Información de la cotización");
         }
+    }
 
         
     }

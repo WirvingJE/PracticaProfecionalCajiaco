@@ -71,8 +71,9 @@
             this.BtnCrearRegistro.Name = "BtnCrearRegistro";
             this.BtnCrearRegistro.Size = new System.Drawing.Size(313, 43);
             this.BtnCrearRegistro.TabIndex = 7;
-            this.BtnCrearRegistro.Text = "Crear Registro";
+            this.BtnCrearRegistro.Text = "Crear Cotización";
             this.BtnCrearRegistro.UseVisualStyleBackColor = false;
+            this.BtnCrearRegistro.Click += new System.EventHandler(this.BtnCrearRegistro_Click);
             // 
             // groupBox3
             // 
@@ -265,7 +266,7 @@
             this.groupBox1.Size = new System.Drawing.Size(778, 226);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Detalle";
+            this.groupBox1.Text = "Cotización";
             // 
             // TxtNotas
             // 
@@ -343,7 +344,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmRegistroDetalle";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Detalle de Material por Obra";
+            this.Text = "Cotización de Material por Obra";
             this.Load += new System.EventHandler(this.FrmRegistroDetalle_Load);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();

@@ -549,6 +549,12 @@ namespace ProyectoFinal_Esteban_Wirving.Formularios
 
             TxtDireccion.Clear();
         }
+
+        private void BtnCancelar_Click(object sender, EventArgs e)
+        {
+            // Cierra el formulario actual
+            this.Close();
+        }
     }
 }
      
