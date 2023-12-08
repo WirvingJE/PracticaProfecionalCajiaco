@@ -38,8 +38,6 @@
             this.mantenimientoUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MnuRegistros = new System.Windows.Forms.ToolStripMenuItem();
             this.registroMaterialesCompradosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.MnuReportes = new System.Windows.Forms.ToolStripMenuItem();
-            this.proveedoresPorMaterialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MnuSalir = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -57,7 +55,6 @@
             this.MnuPrincipal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MnuMantenimientos,
             this.MnuRegistros,
-            this.MnuReportes,
             this.MnuSalir});
             this.MnuPrincipal.Location = new System.Drawing.Point(0, 0);
             this.MnuPrincipal.Name = "MnuPrincipal";
@@ -128,8 +125,8 @@
             this.registroMaterialesCompradosToolStripMenuItem});
             this.MnuRegistros.ForeColor = System.Drawing.Color.White;
             this.MnuRegistros.Name = "MnuRegistros";
-            this.MnuRegistros.Size = new System.Drawing.Size(126, 32);
-            this.MnuRegistros.Text = "REGISTROS";
+            this.MnuRegistros.Size = new System.Drawing.Size(281, 32);
+            this.MnuRegistros.Text = "COTIZACION DE MATERIALES";
             this.MnuRegistros.Click += new System.EventHandler(this.MnuProcesos_Click);
             // 
             // registroMaterialesCompradosToolStripMenuItem
@@ -138,21 +135,6 @@
             this.registroMaterialesCompradosToolStripMenuItem.Size = new System.Drawing.Size(333, 32);
             this.registroMaterialesCompradosToolStripMenuItem.Text = "Cotización Detalle Material";
             this.registroMaterialesCompradosToolStripMenuItem.Click += new System.EventHandler(this.registroMaterialesCompradosToolStripMenuItem_Click);
-            // 
-            // MnuReportes
-            // 
-            this.MnuReportes.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.proveedoresPorMaterialToolStripMenuItem});
-            this.MnuReportes.ForeColor = System.Drawing.Color.White;
-            this.MnuReportes.Name = "MnuReportes";
-            this.MnuReportes.Size = new System.Drawing.Size(116, 32);
-            this.MnuReportes.Text = "REPORTES";
-            // 
-            // proveedoresPorMaterialToolStripMenuItem
-            // 
-            this.proveedoresPorMaterialToolStripMenuItem.Name = "proveedoresPorMaterialToolStripMenuItem";
-            this.proveedoresPorMaterialToolStripMenuItem.Size = new System.Drawing.Size(320, 32);
-            this.proveedoresPorMaterialToolStripMenuItem.Text = "Proveedores por Material";
             // 
             // MnuSalir
             // 
@@ -226,8 +208,6 @@
         private System.Windows.Forms.ToolStripMenuItem mantenimientoEmpleadosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mantenimientoObrasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registroMaterialesCompradosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem MnuReportes;
-        private System.Windows.Forms.ToolStripMenuItem proveedoresPorMaterialToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mantenimientoUsuariosToolStripMenuItem;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
