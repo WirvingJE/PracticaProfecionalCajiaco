@@ -44,8 +44,6 @@
             this.CTipo_Material = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.BtnMaterialAgregar = new System.Windows.Forms.ToolStripButton();
-            this.BtnMaterialEditar = new System.Windows.Forms.ToolStripButton();
-            this.BtnMaterialEliminar = new System.Windows.Forms.ToolStripButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.TxtNotas = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -212,9 +210,7 @@
             // 
             this.toolStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.BtnMaterialAgregar,
-            this.BtnMaterialEditar,
-            this.BtnMaterialEliminar});
+            this.BtnMaterialAgregar});
             this.toolStrip2.Location = new System.Drawing.Point(3, 18);
             this.toolStrip2.Name = "toolStrip2";
             this.toolStrip2.Size = new System.Drawing.Size(772, 27);
@@ -231,25 +227,6 @@
             this.BtnMaterialAgregar.Size = new System.Drawing.Size(146, 24);
             this.BtnMaterialAgregar.Text = "Agregar Material";
             this.BtnMaterialAgregar.Click += new System.EventHandler(this.BtnMaterialAgregar_Click);
-            // 
-            // BtnMaterialEditar
-            // 
-            this.BtnMaterialEditar.BackColor = System.Drawing.Color.DarkGoldenrod;
-            this.BtnMaterialEditar.Image = ((System.Drawing.Image)(resources.GetObject("BtnMaterialEditar.Image")));
-            this.BtnMaterialEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.BtnMaterialEditar.Name = "BtnMaterialEditar";
-            this.BtnMaterialEditar.Size = new System.Drawing.Size(156, 24);
-            this.BtnMaterialEditar.Text = "Modificar Material";
-            // 
-            // BtnMaterialEliminar
-            // 
-            this.BtnMaterialEliminar.BackColor = System.Drawing.Color.Brown;
-            this.BtnMaterialEliminar.ForeColor = System.Drawing.Color.White;
-            this.BtnMaterialEliminar.Image = ((System.Drawing.Image)(resources.GetObject("BtnMaterialEliminar.Image")));
-            this.BtnMaterialEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.BtnMaterialEliminar.Name = "BtnMaterialEliminar";
-            this.BtnMaterialEliminar.Size = new System.Drawing.Size(146, 24);
-            this.BtnMaterialEliminar.Text = "Eliminar Material";
             // 
             // groupBox1
             // 
@@ -371,8 +348,6 @@
         private System.Windows.Forms.DataGridView DgvLista;
         private System.Windows.Forms.ToolStrip toolStrip2;
         private System.Windows.Forms.ToolStripButton BtnMaterialAgregar;
-        private System.Windows.Forms.ToolStripButton BtnMaterialEditar;
-        private System.Windows.Forms.ToolStripButton BtnMaterialEliminar;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox TxtNotas;
         private System.Windows.Forms.Label label3;
